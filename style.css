@@ -1,0 +1,17 @@
+body {
+  display: flex;
+}
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+#grid {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 1048px;
+  width: 1048px;
+}
