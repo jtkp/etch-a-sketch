@@ -15,6 +15,7 @@ body {
   align-content: space-between;
   height: 1048px;
   width: 1048px;
+  padding: 2px;
 }
 
 .row {

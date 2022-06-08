@@ -1,10 +1,34 @@
+let hover = false;
+let currentColor = 'black';
+
+
 const input = document.querySelector('#input');
 input.addEventListener('change', event => generateGrid(event.target.value));
+
+window.addEventListener('mousedown', () => hover = true);
+window.addEventListener('mouseup', () => hover = false);
+
+const color = document.querySelector('#color');
+color.addEventListener('change', event => changeColor(event.target.value));
+
+let grid = document.querySelector('#grid');
+grid.addEventListener('mouseover', event => colorCell(event.target));
+generateGrid(16);
+
+function changeColor(color) {
+    currentColor = color;
+}
+
+function colorCell(cell) {
+    if (hover === false) {
+        return;
+    }
+    cell.style.backgroundColor = currentColor;
+}
 
 function generateGrid(number) {
     console.log('entered generateGrid');
     clearGrid();
-    let grid = document.querySelector('#grid');
 
     for (let i = 0; i < number; i++) {
         let row = document.createElement('div');
@@ -24,7 +48,6 @@ function generateGrid(number) {
 
 function clearGrid() {
     console.log('entered clearGrid');
-    let grid = document.querySelector('#grid');
     let child = grid.lastElementChild;
 
     while (child) {
