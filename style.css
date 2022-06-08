@@ -9,9 +9,21 @@ body {
 
 #grid {
   display: flex;
+  flex-direction: column;
   flex: 0 0 auto;
   justify-content: space-between;
   align-content: space-between;
   height: 1048px;
   width: 1048px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  background-color: black;
+  border: 1px solid white;
 }
